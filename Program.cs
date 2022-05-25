@@ -25,12 +25,17 @@ class Program
                     break;
                 }
             }
-            Console.WriteLine($"Привет, {muser.Name}! ");
-
-            if (!muser.IsPremium)
+            if (muser.Name != null)
             {
-                muser.ShowAds();
+                Console.WriteLine($"Привет, {muser.Name}! ");
+
+                if (!muser.IsPremium)
+                {
+                    muser.ShowAds();
+                }
             }
+            else
+                Console.WriteLine("Пользователь не найден!");
         }
         catch (Exception ex)
         { Console.WriteLine(ex.ToString()); }
